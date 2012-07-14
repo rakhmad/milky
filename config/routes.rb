@@ -1,4 +1,14 @@
 Milky::Application.routes.draw do
+  resources :order_items
+
+  resources :orders
+
+  resources :products
+
+  resources :catalogs
+
+  resources :users
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
