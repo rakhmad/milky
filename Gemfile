@@ -4,6 +4,9 @@ gem 'rails', '3.2.6'
 gem 'bcrypt-ruby'
 gem 'pry'
 gem 'bootstrap-sass'
+gem 'heroku'
+
+gem 'thin'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'
