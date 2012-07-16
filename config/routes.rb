@@ -1,4 +1,5 @@
 Milky::Application.routes.draw do
+
   resources :order_items
 
   resources :orders
@@ -8,6 +9,14 @@ Milky::Application.routes.draw do
   resources :catalogs
 
   resources :users
+
+  resources :session, only: [:new, :create, :destroy]
+
+  match '/signin', to: 'session#new'
+  match '/signout', to: 'session#destroy', via: :delete
+
+  root to: 'user#index'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
