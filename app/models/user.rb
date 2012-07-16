@@ -24,5 +24,12 @@ class User < ActiveRecord::Base
   validates :address, presence:true
   
   before_save { |user| user.email = email.downcase }
-  
+
+  def is_active?
+    if self.status
+      return "Aktif"
+    else
+      return "Tidak Aktif"
+    end
+  end
 end
