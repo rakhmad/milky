@@ -1,31 +1,35 @@
 <%= provide(:title, @user.name) %>
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Username:</b>
-  <%= @user.username %>
-</p>
+<h1>User Detail</h1>
+<table class="table table-striped">
+  <tbody>
+  <tr>
+    <td>Username</td>
+    <td><%= @user.username %></td>
+  </tr>
 
-<p>
-  <b>Name:</b>
-  <%= @user.name %>
-</p>
+  <tr>
+    <td>Name</td>
+    <td><%= @user.name %></td>
+  </tr>
 
-<p>
-  <b>Email:</b>
-  <%= @user.email %>
-</p>
+  <tr>
+    <td>Email</td>
+    <td><%= @user.email %></td>
+  </tr>
 
-<p>
-  <b>Address:</b>
-  <%= @user.address %>
-</p>
+  <tr>
+    <td>Address</td>
+    <td><%= @user.address %></td>
+  </tr>
 
-<p>
-  <b>Status:</b>
-  <%= @user.is_active? %>
-</p>
+  <tr>
+    <td>Status</td>
+    <td><%= @user.is_active? %></td>
+  </tr>
+  </tbody>
+</table>
 
-
-<%= link_to 'Edit', edit_user_path(@user) , :class => "btn btn-primary" %> 
-<%= link_to 'Back', users_path, :class => "btn"  %>
+<%= link_to 'Edit', edit_user_path(@user), :class => "btn btn-primary" %>
+<%= link_to 'Back', users_path, :class => "btn" %>

@@ -1,6 +1,7 @@
 <h1>Listing users</h1>
 
 <table class="table table-striped">
+  <thead>
   <tr>
     <th>Username</th>
     <th>Name</th>
@@ -11,7 +12,8 @@
     <th></th>
     <th></th>
   </tr>
-
+  </thead>
+  <tbody>
 <% @users.each do |user| %>
   <tr>
     <td><%= user.username %></td>
@@ -20,12 +22,11 @@
     <td><%= user.address %></td>
     <td><%= user.is_active? %></td>
     <td><%= link_to 'Show', user, :class => 'btn btn-mini btn-info'%></td>
-    <td><%= link_to 'Edit', edit_user_path(user), :class => 'btn btn-mini' %></td>
+    <td><%= link_to 'Edit', edit_user_path(user), :class => 'btn btn-mini btn-warning' %></td>
     <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-mini btn-danger' %></td>
   </tr>
 <% end %>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New User', new_user_path, class: "btn btn-primary" %>
+<%= link_to 'New User', new_user_path, class: "btn btn-primary btn-large" %>

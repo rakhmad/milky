@@ -1,6 +1,7 @@
 <h1>Listing products</h1>
 
-<table>
+<table class="table table-striped">
+  <thead>
   <tr>
     <th>Name</th>
     <th>Buy price</th>
@@ -10,20 +11,20 @@
     <th></th>
     <th></th>
   </tr>
-
-<% @products.each do |product| %>
-  <tr>
-    <td><%= product.name %></td>
-    <td><%= product.buy_price %></td>
-    <td><%= product.sell_price %></td>
-    <td><%= product.catalog %></td>
-    <td><%= link_to 'Show', product %></td>
-    <td><%= link_to 'Edit', edit_product_path(product) %></td>
-    <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+  </thead>
+  <tbody>
+  <% @products.each do |product| %>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= product.buy_price %></td>
+        <td><%= product.sell_price %></td>
+        <td><%= product.catalog %></td>
+        <td><%= link_to 'Show', product, :class => "btn btn-mini btn-info" %></td>
+        <td><%= link_to 'Edit', edit_product_path(product), :class => "btn btn-mini btn-warning" %></td>
+        <td><%= link_to 'Destroy', product, method: :delete, data: {confirm: 'Are you sure?'}, :class => "btn btn-mini btn-destroy" %></td>
+      </tr>
+  <% end %>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New Product', new_product_path %>
+<%= link_to 'New Product', new_product_path, :class => "btn btn-large btn-primary" %>

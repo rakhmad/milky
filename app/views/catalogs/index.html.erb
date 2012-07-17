@@ -1,6 +1,7 @@
 <h1>Listing catalogs</h1>
 
-<table>
+<table class="table table-striped">
+  <thead>
   <tr>
     <th>Name</th>
     <th>Begin</th>
@@ -10,7 +11,9 @@
     <th></th>
     <th></th>
   </tr>
+  </thead>
 
+<tbody>
 <% @catalogs.each do |catalog| %>
   <tr>
     <td><%= catalog.name %></td>
@@ -22,6 +25,7 @@
     <td><%= link_to 'Destroy', catalog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
+</tbody>
 </table>
 
 <br />
