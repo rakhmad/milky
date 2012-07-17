@@ -14,4 +14,8 @@
 class Catalog < ActiveRecord::Base
   attr_accessible :begin, :end, :name, :status
   has_many :products
+
+  def to_s
+    return self.name
+  end
 end
